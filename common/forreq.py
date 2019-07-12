@@ -13,3 +13,6 @@ class Requests():
     def get_json(self):
         return self.res.json()
 
+if __name__ == '__main__':
+    res=Requests(method='get',url='https://www.weseepro.com/api/v1/message/discovery/v1')
+    print(res.get_status_code())
