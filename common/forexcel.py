@@ -23,11 +23,10 @@ class DoExcel:
             max_row = sheet.max_row
             test_case = []
             for i in range(2,max_row+1):
-                a = sheet.cell(row = i,column = 1).value
-                test_case.append(a)
-                b = sheet.cell(row=i, column=2).value
-                test_case.append(b)
-                 # 读取出来的数据添加到list
+                excel_case = Case()
+                excel_case.method = sheet.cell(row=i, column=1).value
+                excel_case.url = sheet.cell(row=i, column=2).value
+                test_case.append(excel_case)  # 读取出来的数据添加到list
             return test_case
 
 
@@ -36,6 +35,16 @@ class DoExcel:
 
 
 if __name__ == '__main__':
-    excel_path=os.path.join(os.path.split(os.path.split(os.path.realpath(__file__))[0])[0], r'data\test_case_web.xlsx')
+    '''
+    os.path.join路径组合返回
+    os.path.split()：按照路径将文件名和路径分割开
+    os.path.realpath(__file__)获取文件所在目录
+    '''
+    excel_path = os.path.join(os.path.split(os.path.split(os.path.realpath(__file__))[0])[0],
+                              r'data\test_case_web.xlsx')
     print(excel_path)
     t = DoExcel(excel_path).read_cases('web')
+    print(t)
+    for case_run in t:  # 遍历出组装好的测试用例
+        print('\ntest_case信息:{}'.format(case_run.__dict__))
+
