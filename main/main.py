@@ -20,13 +20,9 @@ class test_main(unittest.TestCase):
     def test_aaa(self,case):
 
         #数据转换， json.loads()用于将str类型的数据转成dict
-
-        data=json.loads(case.data)
-        print(data[1])
-        '''
-        res=Requests(method=tt['method'],url=tt['url'])
+        # data=json.loads(case.data)
+        res=Requests(method=case.method,url=case.url)
         print("状态码:{0}，响应结果:{1}".format(res.get_status_code(),res.get_json()))
-        '''
     def tearDown(self):
         print("----------测试清除-------------")
 
