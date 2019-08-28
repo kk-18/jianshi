@@ -20,10 +20,12 @@ class test_main(unittest.TestCase):
     def test_aaa(self,case):
 
         #数据转换， json.loads()用于将str类型的数据转成dict
-        # data=json.loads(case.data)
+        #读取excel中的case.data为str，应该使用双引号，单引号会报错
+        datas=json.loads(case.data)
         print("用例id:{0},用例名称{1}".format(case.id,case.title))
         header={'Authorization':'0143d81d09ad4ce6aaea7beda1be28b8'}
-        res=Requests(method=case.method,url=case.url,headers=header)
+        res=Requests(method=case.method,url=case.url,headers=header,params=datas)
+        print(res.get_url())
         print("状态码:{0}，响应结果:{1}".format(res.get_status_code(),res.get_json()))
         #断言
         self.assertEqual(res.get_status_code(),200,"失败")

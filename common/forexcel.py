@@ -28,6 +28,7 @@ class DoExcel:
                 excel_case.title = sheet.cell(row=i, column=2).value
                 excel_case.method = sheet.cell(row=i, column=3).value
                 excel_case.url = sheet.cell(row=i, column=4).value
+                excel_case.data = sheet.cell(row=i, column=5).value
                 test_case.append(excel_case)  # 读取出来的数据添加到list
             return test_case
 
