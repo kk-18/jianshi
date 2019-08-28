@@ -4,7 +4,7 @@ import os
 from ddt import ddt,data
 import json
 from common.forreq import Requests
-from common.forexcel import *
+from common.readExcel import *
 
 @ddt
 class test_main(unittest.TestCase):
