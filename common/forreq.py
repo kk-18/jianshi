@@ -1,11 +1,11 @@
 import requests
 
 class Requests():
-    def __init__(self,method,url):
+    def __init__(self,method,url,headers=None,):
         if method=='get':
-            self.res=requests.get(url=url)
+            self.res=requests.get(url=url,headers=headers,)
         elif method=='post':
-            self.res=requests.post(url=url)
+            self.res=requests.post(url=url,headers=headers)
 
     def get_status_code(self):
         return self.res.status_code
