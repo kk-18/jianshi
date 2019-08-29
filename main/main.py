@@ -1,13 +1,14 @@
 import unittest
 import openpyxl
 import os
+import HTMLTestRunner
 from ddt import ddt,data
 import json
 from common.forreq import Requests
 from common.readExcel import *
 
 @ddt
-class test_main(unittest.TestCase):
+class Test_one(unittest.TestCase):
     # 获取文件路径
     excel_path = os.path.join(os.path.split(os.path.split(os.path.realpath(__file__))[0])[0],
                               r'data\test_case_web.xlsx')
@@ -17,7 +18,7 @@ class test_main(unittest.TestCase):
         print("----------测试开始-----------")
 
     @data(*tt)#装饰测试方法，拿到几个数据数据就执行几条用例
-    def test_aaa(self,case):
+    def test_01(self,case):
 
         #数据转换， json.loads()用于将str类型的数据转成dict
         #读取excel中的case.data为str，应该使用双引号，单引号会报错
@@ -33,4 +34,14 @@ class test_main(unittest.TestCase):
         print("----------测试清除-------------")
 
 if __name__ == '__main__':
-    unittest.main()
+    suite = unittest.TestSuite()#获取测试套件
+    #suite.addTest(Test_one("test_01"))#添加类中的测试用例
+    report_path = "F:\\python\\jianshi\\report\\result.html"
+    fp = open(report_path, "wb")
+    runner = HTMLTestRunner.HTMLTestRunner(
+        stream=fp,  # 报告写入文件的存储区域
+        title='<web端接口>',  # 报告主题
+        description='web端部分接口'  # 报告描述
+    )
+    runner.run(suite)
+    fp.close()

@@ -4,8 +4,11 @@ import os
 class Case:
 
     def __init__(self): # 初始化,先传个空值,读取时候再赋值
+        self.id=None
+        self.title=None
         self.method = None
         self.url = None
+        self.data=None
 
 
 class DoExcel:
