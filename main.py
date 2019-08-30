@@ -12,10 +12,10 @@ print(cur_path)
 start_dir=os.path.join(cur_path,'case')
 print(start_dir)
 
-discover=unittest.defaultTestLoader.discover(start_dir,#要测试的模块名或者测试用例目录名
+discover=unittest.defaultTestLoader.discover(start_dir,#要测试的模块名或者测试用例目录名称
                                             pattern="test_*.py",#标识用例文件名的匹配原则
                                              top_level_dir=None)#测试模块的顶层目录，若没有则为None
-report_path = "F:\\python\\jianshi\\report\\result.html"
+report_path=os.path.join(cur_path,'report\\result.html')
 fp = open(report_path, "wb")
 # 执行测试用例并输出html报告
 runners = HTMLTestRunner.HTMLTestRunner(
