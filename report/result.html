@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>&lt;web端接口&gt;</h1>
-<p class='attribute'><strong>Start Time:</strong> 2019-08-29 14:39:05</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:00</p>
-<p class='attribute'><strong>Status:</strong> none</p>
+<p class='attribute'><strong>Start Time:</strong> 2019-08-30 11:29:40</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:00.750022</p>
+<p class='attribute'><strong>Status:</strong> Pass 2 Failure 1</p>
 
 <p class='description'>web端部分接口</p>
 </div>
@@ -221,11 +221,104 @@ function showOutput(id, name) {
     <td>View</td>
 </tr>
 
+<tr class='failClass'>
+    <td>test_web.test_one</td>
+    <td>3</td>
+    <td>2</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',3)">Detail</a></td>
+</tr>
+
+<tr id='ft1.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_01_1</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        fail</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: Traceback (most recent call last):
+  File "D:\mysoftware\Anaconda\lib\site-packages\ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "F:\python\jianshi\case\test_web.py", line 32, in test_01
+    self.assertEqual(res.get_status_code(),200,"失败")
+AssertionError: 400 != 200 : 失败
+Traceback (most recent call last):
+  File "D:\mysoftware\Anaconda\lib\site-packages\ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "F:\python\jianshi\case\test_web.py", line 32, in test_01
+    self.assertEqual(res.get_status_code(),200,"失败")
+AssertionError: 400 != 200 : 失败
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_01_2</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        pass</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.2: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_01_3</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
+        pass</a>
+
+    <div id='div_pt1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.3: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
 <tr id='total_row'>
     <td>Total</td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
+    <td>3</td>
+    <td>2</td>
+    <td>1</td>
     <td>0</td>
     <td>&nbsp;</td>
 </tr>

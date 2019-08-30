@@ -8,7 +8,7 @@ from common.forreq import Requests
 from common.readExcel import *
 
 @ddt
-class Test_one(unittest.TestCase):
+class test_one(unittest.TestCase):
     # 获取文件路径
     excel_path = os.path.join(os.path.split(os.path.split(os.path.realpath(__file__))[0])[0],
                               r'data\test_case_web.xlsx')
@@ -34,14 +34,4 @@ class Test_one(unittest.TestCase):
         print("----------测试清除-------------")
 
 if __name__ == '__main__':
-    suite = unittest.TestSuite()#获取测试套件
-    #suite.addTest(Test_one("test_01"))#添加类中的测试用例
-    report_path = "F:\\python\\jianshi\\report\\result.html"
-    fp = open(report_path, "wb")
-    runner = HTMLTestRunner.HTMLTestRunner(
-        stream=fp,  # 报告写入文件的存储区域
-        title='<web端接口>',  # 报告主题
-        description='web端部分接口'  # 报告描述
-    )
-    runner.run(suite)
-    fp.close()
+    unittest.main()

@@ -1,6 +1,6 @@
 from HTMLTestRunner import HTMLTestRunner
 import unittest
-from main import test_main
+from case import test_main
 
 class WriteHtml():
 
