@@ -2,6 +2,7 @@ import unittest
 import os
 import sys
 import HTMLTestRunner
+from common.Email import SendEmail
 
 
 # 当前脚本所在文件真实路径
@@ -25,3 +26,5 @@ runners = HTMLTestRunner.HTMLTestRunner(
  )
 runners.run(discover)
 fp.close()
+
+#发送邮件
