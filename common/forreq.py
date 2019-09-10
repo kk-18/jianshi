@@ -6,6 +6,8 @@ class Requests():
             self.res=requests.get(url=url,headers=headers,params=params)
         elif method=='post':
             self.res=requests.post(url=url,headers=headers,params=params)
+        elif method=='put':
+            self.res=requests.put(url=url,headers=headers,params=params)
 
     def get_status_code(self):
         return self.res.status_code

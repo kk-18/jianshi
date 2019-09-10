@@ -8,7 +8,7 @@ from common.Email import SendEmail
 # 当前脚本所在文件真实路径
 #  os.path.dirname(path) 获取当前文件绝对路径
 cur_path = os.path.dirname(os.path.realpath(__file__))
-print(cur_path)
+
 #os.path.join()在路径后追加
 start_dir=os.path.join(cur_path,'case')
 print(start_dir)
@@ -28,3 +28,4 @@ runners.run(discover)
 fp.close()
 
 #发送邮件
+SendEmail().Sendemail()

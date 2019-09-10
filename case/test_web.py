@@ -8,7 +8,7 @@ from common.forreq import Requests
 from common.readExcel import *
 
 @ddt
-class test_one(unittest.TestCase):
+class test_Web(unittest.TestCase):
     # 获取文件路径
     excel_path = os.path.join(os.path.split(os.path.split(os.path.realpath(__file__))[0])[0],
                               r'data\test_case_web.xlsx')
@@ -18,7 +18,7 @@ class test_one(unittest.TestCase):
         print("----------测试开始-----------")
 
     @data(*tt)#装饰测试方法，拿到几个数据数据就执行几条用例
-    def test_01(self,case):
+    def test_web(self,case):
 
         #数据转换， json.loads()用于将str类型的数据转成dict
         #读取excel中的case.data为str，应该使用双引号，单引号会报错
