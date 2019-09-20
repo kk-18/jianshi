@@ -1,7 +1,7 @@
 import unittest
 import os
 import sys
-import HTMLTestRunner
+from BeautifulReport import BeautifulReport
 from common.Email import SendEmail
 
 
@@ -19,12 +19,8 @@ discover=unittest.defaultTestLoader.discover(start_dir,#要测试的模块名或
 report_path=os.path.join(cur_path,'report\\result.html')
 fp = open(report_path, "wb")
 # 执行测试用例并输出html报告
-runners = HTMLTestRunner.HTMLTestRunner(
-        stream=fp,  # 报告写入文件的存储区域
-        title='<web端接口>',  # 报告主题
-        description='web端部分接口'  # 报告描述
- )
-runners.run(discover)
+runners = BeautifulReport(discover)
+runners.report(filename='result', description='web端部分接口', log_path='F:\\python\\jianshi\\report\\')
 fp.close()
 
 #发送邮件
